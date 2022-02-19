@@ -13,42 +13,10 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
 
-var numbers = "0-9";
-var lowerCase = "a-z";
-var upperCase = "A-Z";
-var specialCharacters = "!@#$%^&*()?"; 
+var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',];
+var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
+var passwordNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.',];
 
-var generatePassword = function() {
-    var length = window.prompt("How many characters would you like?"); {
-        var passWordLength = {
-          from:8,
-          to: 128,
-        }
-        console.log(passWordLength);
-    };
 
-    var lowerCase = window.prompt("Would you like to add lowercase letters?");
-    if (lowerCase === "yes") {
-      lowerCase = () => {
-      }
-      return this.lowerCase;
-    };
-    var upperCase = window.prompt("Would you like to add uppercase letters?");
-    if (upperCase === "yes") {
-      return upperCase; 
-    }if (upperCase === "no"){
-      return numbers
-    };
-    var numbers = window.prompt("Would you like to add numbers?");
-    if (numbers === "yes") {
-      return numbers
-    }if (numbers === "no") {
-      return specialCharacters
-    };
-    var specialCharacters = window.prompt("Would you like to add special characters?");
-    if (specialCharacters === "yes") {
-      return specialCharacters 
-    } if (specialCharacters === "no") {
-      return writePassword
-    };
-};
+
