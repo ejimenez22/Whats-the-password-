@@ -22,7 +22,8 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')
 // create password
 function generatePassword() {
 
-  var randomPassword = "";
+  // change to array 
+var randomPassword = Array;  // msg = ''  // msg2 = []
 
   var passwordLength = window.prompt("Please enter how many characters you would like to have, between 8 and 128.");
   if (passwordLength >= 8 || passwordLength <= 128) {
@@ -60,9 +61,12 @@ if (passwordNumbers) {
 if (specialCharacters) {
   randomPassword = randomPassword.concat(specialCharacters);
 }
-
+console.log(passwordLength, 'int')
+// passwordLength is a string 
+// randomPassword
+console.log(randomPassword, typeof randomPassword)
 for (var i = 0; i < passwordLength; i++) {
-  randomPassword = passwordLength[Math.floor(Math.random() * passwordLength.length)];
+  randomPassword = Math.floor(Math.random() * (26 - 0) + 0);
 }
-return randomPassword;
+console.log(randomPassword); 
 };
