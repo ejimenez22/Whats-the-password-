@@ -22,8 +22,7 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')
 // create password
 function generatePassword() {
 
-  // change to array 
-var randomPassword = lowerCase.concat(upperCase, passwordNumbers, specialCharacters);  // msg = ''  // msg2 = []
+var randomPassword = lowerCase.concat (upperCase, passwordNumbers, specialCharacters);
 
   var passwordLength = window.prompt("Please enter how many characters you would like to have, between 8 and 128.");
   if (passwordLength >= 8 || passwordLength <= 128) {
@@ -48,25 +47,12 @@ var randomPassword = lowerCase.concat(upperCase, passwordNumbers, specialCharact
   if (scConfirm) {
     randomPassword += specialCharacters;
   }
-
-if (lowerCase) {
-  randomPassword = randomPassword.concat(lowerCase);
-}
-if (upperCase) {
-  randomPassword = randomPassword.concat(upperCase);
-}
-if (passwordNumbers) {
-  randomPassword = randomPassword.concat(passwordNumbers);
-}
-if (specialCharacters) {
-  randomPassword = randomPassword.concat(specialCharacters);
-}
 console.log(passwordLength, 'int')
 // passwordLength is a string 
 // randomPassword
 console.log(randomPassword, typeof randomPassword)
-for (var i = 0; i < passwordLength; i++) {
-  passwordLength = (Math.floor(Math.random() * (26 - 0) + 0));
+for (let i = 0; i < (parseInt(passwordLength) - 8); i++) {
+  return randomPassword[Math.floor(Math.random() * randomPassword.length)];
 }
-return randomPassword;
+
 };
