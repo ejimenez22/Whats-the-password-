@@ -23,7 +23,6 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')
 function generatePassword() {
 
   var randomPassword = "";
-  var passwordCharacters = "";
 
   var passwordLength = window.prompt("Please enter how many characters you would like to have, between 8 and 128.");
   if (passwordLength >= 8 || passwordLength <= 128) {
@@ -32,20 +31,20 @@ function generatePassword() {
       window.prompt("Please enter how many characters you would like to have, between 8 and 128.");
     }
   }
-  var lowerCase = window.confirm("Would you like to add lower case letters?");
-  if (lowerCase) {
-    randomPassword += lowercase;
+  var lcConfirm = window.confirm("Would you like to add lower case letters?");
+  if (lcConfirm) {
+    randomPassword += lowerCase;
   }
-  var upperCase = window.confirm("Would you like to add upper case letters?");
-  if (upperCase) {
+  var upConfirm = window.confirm("Would you like to add upper case letters?");
+  if (upConfirm) {
     randomPassword += upperCase;
   }
-  var passwordNumbers = window.confirm("Would you like numbers?");
-  if (passwordNumbers) {
+  var pnConfirm = window.confirm("Would you like numbers?");
+  if (pnConfirm) {
     randomPassword += passwordNumbers;
   }
-  var specialCharacters = window.confirm("Would you like to add special characters?");
-  if (specialCharacters) {
+  var scConfirm = window.confirm("Would you like to add special characters?");
+  if (scConfirm) {
     randomPassword += specialCharacters;
   }
 
@@ -62,8 +61,8 @@ if (specialCharacters) {
   randomPassword = randomPassword.concat(specialCharacters);
 }
 
-for (var i = 0; i <= passwordLength; i++) {
-  randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+for (var i = 0; i < passwordLength; i++) {
+  randomPassword = passwordLength[Math.floor(Math.random() * passwordLength.length)];
 }
 return randomPassword;
 };
